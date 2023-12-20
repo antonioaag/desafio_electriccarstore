@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Playpen+Sans&family=Roboto:wght@300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "nav"
+    "main"
+    "footer";
+    grid-template-rows: 10vh 10vh calc(100vh - 30vh)   10vh;
+
+}
+
+header{
+    background-color: #3559E0;
+    color: white;
+    grid-area: header;
+    display: flex;
+}
+
+header .logo {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    grid-area: logo;
+}
+
+header .logo .iconos {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+header .barras {
+    position: absolute;
+    right: 5%;
+    padding: 10px;
+    grid-area: barras;
+}
+
+header .accesos-directos {
+    display: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    grid-area: main;
+    overflow: scroll;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #EBF3E8;
+    grid-area: nav;
+    padding: 10px;
+}
+
+main .galeria {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    gap: 10PX;
+    padding: 10px;
+
+}
+
+main .galeria .card {
+    border: .5px solid #EBE3D5;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5%;
+    width: 350px;
+}
+
+main .galeria .card img {
+    width: 350px;
+    padding: 5px;
+    border-radius: 8%;
+}
+
+
+main .galeria .titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+main .galeria .card a button {
+    background-color: #3559E0;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5%;
+}
+
+main .paginas {
+    display: flex;
+}
+
+main .paginas ul {
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+    main .paginas ul li {
+        display: inline;
+        padding: 5px;
+        border-radius: 5%;
+        border: .5px solid #EBE3D5;
+        color: #0174BE;
+}
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #001B79;
+        color: white;
+        gap: 5px;
+        padding: 10px;
+        grid-area: footer;
+}
+
+    footer .redes-sociales {
+        display: flex;
+        gap: 5px;
+}
+
+    /*PARA TABLET*/
+
+    @media (min-width: 576px) {
+
+        body {
+            display: grid;
+            grid-template-columns: 20vw  calc(100vw - 30vw) 10vw;
+            grid-template-rows: 10vh calc(100vh - 20vh) 10vh;
+            grid-template-areas: 
+            "header header header"
+            "nav main main"
+            "footer footer footer"
+            ;
+        }
+
+        header .barras {
+            display: none;
+        }
+
+        header .accesos-directos {
+            display: inline;
+            position: absolute;
+            right: 5%;
+        }
+
+        header .accesos-directos ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            padding: 10px;
+        }
+        main .galeria .card {
+            width: 250px;
+        }
+
+        main .galeria .card img {
+            width: 250px;
+        }
+
+    }
+
+        /*PARA desktop*/
+
+    @media (min-width: 992px) {
+
+        body {
+            display: grid;
+            grid-template-columns: 20vw  calc(100vw - 30vw) 10vw;
+            grid-template-rows: 10vh calc(100vh - 20vh) 10vh ;
+            grid-template-areas:
+            "header nav nav"
+            "header main main"
+            "footer main main"
+            ;
+        }
+
+        header {
+
+        }
+
+        header .accesos-directos {
+            position: initial;
+            float: left;
+        }
+
+        header .accesos-directos ul {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header .accesos-directos ul li {
+            float: left;
+        }
+
+        footer .derechos p {
+            font-size: 10px;
+            font-family: 'Roboto', sans-serif;
+        }
+    }
+
+    nav {
+        display: flex;
+        gap: 15px;
+        padding-bottom: 25px;
+    }
+
+    p {
+        font-family: 'Roboto', sans-serif;
+    }
